@@ -1,2 +1,2 @@
-# EstructuraDeDatos-practica1
+# EstructuraDeDatos
 Recorriendo Un Vector

@@ -1,2 +1,2 @@
 # EstructuraDeDatos
-Recorriendo Un Vector
+Promedio, maximo y minimo de un vector

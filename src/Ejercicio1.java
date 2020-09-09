@@ -1,36 +1,57 @@
+import java.util.Scanner;
+
 /**
- * Ejercicio 1
- * Realizar un programa que defina un vector llamado “vector_numeros” de 10 enteros, a continuación lo
- * inicialice con valores aleatorios (del 1 al 10) y posteriormente muestre en pantalla cada elemento del
- * vector junto con su cuadrado y su cubo.
+ * Se quiere realizar un programa que lea por teclado las 5 notas obtenidas por un alumno (comprendidas
+ * entre 0 y 10). A continuación debe mostrar todas las notas, la nota media, la nota más alta que ha
+ * sacado y la menor
  */
 
-public class Ejercicio1 {
-    //definir el vector
-    int[] vector_numeros = new int[10];
+public class Ejercicio3 {
+    //vector notas
 
-    //metodo constructor por defecto
-    public Ejercicio1() {
+    int[] notas;
 
+    Scanner scanner;
+
+    //metodo constructor
+    public Ejercicio3(){
+        notas = new int[5];
+        scanner = new Scanner(System.in);
     }
-
     //metodo ejecutar
-    public void ejecutar() {
-        //inicializamos el vector con valores aleatorios (1-10)
-        for (int i = 0; i < vector_numeros.length; i++) {
-            int aleatorio = (int) (Math.random() * 10 + 1);
+    public void ejecutar(){
+        for (int i = 0; i < notas.length; i++) {
+            //ingresa notas (1-10)
+            System.out.println("notas[" + i + "]: ");
 
-            vector_numeros[i] = aleatorio;
-        }
-        for (int i = 0; i < vector_numeros.length; i++) {
-            int numero = vector_numeros[i];
-            int cuadrado = (int) Math.pow(numero,2);
-            int cubo = (int) Math.pow(numero,3);
-            System.out.println("vector_numeros[" + i + "]: " + numero + "," + cuadrado + "," + cubo);
+            int nota = scanner.nextInt();
+
+            notas[i] = nota;
+
 
         }
+        //mostrar notas
+        double suma = 0;
+        double promedio;
+        int minimo= 10;
+        int maximo = 0;
+        for (int i = 0; i < notas.length; i++) {
+            System.out.println("notas[" + i + "]:" + notas[i]);
+            suma = suma + notas[i];
 
+            if(notas[i] < minimo){
+                minimo = notas[i];
+            }
+            if(notas[i] > maximo){
+                maximo = notas[i];
+            }
+
+        }
+
+        promedio = suma / notas.length;
+
+        System.out.println("Promedio:" + promedio);
+        System.out.println("Maximo:" + maximo);
+        System.out.println("Minimo:" + minimo);
     }
-
-
 }

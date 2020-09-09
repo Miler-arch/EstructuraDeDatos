@@ -1,6 +1,7 @@
 public class Main {
-    public static void main(String[] args) {
-        Ejercicio1 ejercicio1 = new Ejercicio1();
-        ejercicio1.ejecutar();
+    public static void main(String[] args){
+        Ejercicio3 ejercicio3 = new Ejercicio3();
+        ejercicio3.ejecutar();
+
     }
 }
